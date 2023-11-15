@@ -1,0 +1,33 @@
+bg_color white
+
+color 0x88CBFF, chain A
+
+select akt1_80, chain A and resi 80
+create akt1_80_obj, akt1_80
+select akt1_165, chain A and resi 165
+create akt1_165_obj, akt1_165
+select akt1_323, chain A and resi 323
+create akt1_323_obj, akt1_323
+
+show sticks, akt1_80_obj or akt1_165_obj or akt1_323_obj
+color 0xFC6365, akt1_80_obj or akt1_165_obj or akt1_323_obj
+
+select lys14, chain A and resi 14
+create lys14_obj, lys14
+color 0x5B53F9, lys14_obj
+
+select residue_center, akt1_323_obj or lys14_obj
+orient residue_center
+
+view lys, store
+
+set ray_trace_mode, 1
+set ray_trace_gain, 0.12
+set ray_opaque_background, on
+ray 2560, 2560
+png \\wsl.localhost\Ubuntu\home\gnikolenyi\scripts\izar_vis\akt1_323_wt.png
+
+
+select hidden_res, chain A and resi 444-454
+hide everything, hidden_res
+set cartoon_gap_cutoff, 0

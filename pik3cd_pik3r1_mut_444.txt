@@ -1,0 +1,21 @@
+bg_color white
+
+color 0x42DE9F, chain A
+color 0x88CBFF, chain B
+
+select pik3cd_wt_444, chain A and resi 444
+create pik3cd_wt_444_obj, pik3cd_wt_444
+
+show sticks, pik3cd_wt_444_obj
+color 0xFC6365, pik3cd_wt_444_obj
+
+select residue_center, pik3cd_wt_444_obj
+
+select keep_resids, (chain A and resi 315-484) or chain B
+create keep_resids_obj, keep_resids
+
+hide everything, ma-t3vr3-021
+
+orient residue_center
+
+png \\wsl.localhost\Ubuntu\home\gnikolenyi\scripts\izar_vis\pik3cd_pik3r1_444_wt.png

@@ -1,0 +1,18 @@
+bg_color white
+
+color 0x42DE9F, chain A
+color 0x88CBFF, chain B
+
+select pik3cd_wt_416, chain A and resi 416
+create pik3cd_wt_416_obj, pik3cd_wt_416
+
+show sticks, pik3cd_wt_416_obj
+color 0xFC6365, pik3cd_wt_416_obj
+
+select pik3r1_lys_567, chain B and resi 567
+create pik3r1_lys_567_obj, pik3r1_lys_567
+show sticks, pik3r1_lys_567_obj
+color 0x5B53F9, pik3r1_lys_567_obj
+
+select residue_center, pik3cd_wt_416_obj or pik3r1_lys_567_obj
+orient residue_center

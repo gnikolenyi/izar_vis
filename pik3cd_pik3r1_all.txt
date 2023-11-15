@@ -1,0 +1,28 @@
+bg_color white
+
+color 0x42DE9F, chain A
+color 0x88CBFF, chain B
+
+select pik3cd_mut, (chain A and resi 416) or (chain A and resi 444) or (chain A and resi 529) or (chain A and resi 527) or (chain A and resi 525) or (chain A and resi 524)
+create pik3cd, pik3cd_mut
+show sticks, pik3cd
+color 0xFC6365, pik3cd
+
+select pik3r1_mut, (chain B and resi 570)
+create pik3r1, pik3r1_mut
+show sticks, pik3r1
+color 0xF8B200, pik3r1
+
+select hidden_res, chain A and resi 292-315
+hide everything, hidden_res
+
+rotate x, -145
+rotate y, -20
+rotate z, -15
+zoom complete=1
+translate [0, 5, 0]
+
+set ray_trace_mode, 1
+set ray_opaque_background, on
+ray 2560, 2560
+png \\wsl.localhost\Ubuntu\home\gnikolenyi\scripts\izar_vis\pik3cd_pik3r1_all.png

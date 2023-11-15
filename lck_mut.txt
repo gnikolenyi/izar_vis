@@ -1,0 +1,21 @@
+bg_color white
+
+color 0x88CBFF, chain A
+
+select lck_505, chain A and resi 505
+create lck_505_obj, lck_505
+select lck_506, chain A and resi 506
+create lck_506_obj, lck_506
+
+show sticks, lck_505_obj or lck_506_obj
+color 0xFC6365, lck_505_obj or lck_506_obj
+
+select hidden_res, chain A and resi 1-63
+hide everything, hidden_res
+
+set ray_trace_mode, 1
+set ray_trace_gain, 0.12
+set ray_opaque_background, on
+ray 2560, 2560
+
+png \\wsl.localhost\Ubuntu\home\gnikolenyi\scripts\izar_vis\lck_all.png
